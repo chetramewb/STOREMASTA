@@ -1,0 +1,621 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>storemasta</title>
+    <style>
+
+        html{background:#bfbfbf; height:100%;}
+        body{margin:0 auto; width:100%;  font-family: 'Usual'; font-size:14px; box-sizing: border-box;}
+
+
+    @font-face {
+    font-family: 'Usual';
+    src: url('Usual-ExtraBold.eot');
+    src: local('./font/Usual ExtraBold'), local('Usual-ExtraBold'),
+    url('./font/Usual-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('./font/Usual-ExtraBold.woff2') format('woff2'),
+    url('./font/Usual-ExtraBold.woff') format('woff'),
+    url('./font/Usual-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    }
+
+
+
+
+
+
+    @font-face {
+    font-family: 'Usual';
+    src: url('Usual-Bold.eot');
+    src: local('./font/Usual Bold'), local('Usual-Bold'),
+    url('./font/Usual-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./font/Usual-Bold.woff2') format('woff2'),
+    url('./font/Usual-Bold.woff') format('woff'),
+    url('./font/Usual-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    }
+
+
+
+    @font-face {
+    font-family: 'Usual';
+    src: url('Usual-Medium.eot');
+    src: local('./font/Usual Medium'), local('Usual-Medium'),
+    url('./font/Usual-Medium.eot?#iefix') format('embedded-opentype'),
+    url('./font/Usual-Medium.woff2') format('woff2'),
+    url('./font/Usual-Medium.woff') format('woff'),
+    url('./font/Usual-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'Usual';
+    src: url('Usual-Regular.eot');
+    src: local('./font/Usual'), local('Usual-Regular'),
+    url('./font/Usual-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./font/Usual-Regular.woff2') format('woff2'),
+    url('./font/Usual-Regular.woff') format('woff'),
+    url('./font/Usual-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: 'Usual';
+    src: url('Usual-Light.eot');
+    src: local('./font/Usual Light'), local('Usual-Light'),
+    url('./font/Usual-Light.eot?#iefix') format('embedded-opentype'),
+    url('./font/Usual-Light.woff2') format('woff2'),
+    url('./font/Usual-Light.woff') format('woff'),
+    url('./font/Usual-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    }
+    table{border:none;}
+    .Benefit h4::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+    width: 49px;
+    height: 5px;
+    background: red;
+    }
+    .product h4::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+    width: 49px;
+    height: 5px;
+    background: red;
+    }
+    .shadow-blog {
+	margin-bottom: 10px;
+}
+.country img {
+	min-height: 49px;
+	object-fit: cover;
+}
+    .footer-text a:hover {
+        color: #0077c0 !important;
+    }
+    table.content-table tr td p{color:#506f83; font-size:14px; padding:0px;}
+    @media all and (max-width:650px){
+
+        table, tr, td{display:table; overflow: hidden; width: 100% !important;}
+        .product-item tr td table {
+        width: 100% !important;
+        float: unset !important;
+        text-align: center !important;
+    }
+    .product-item tr td table tbody {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block;
+    }
+    table, tr, td {
+        display: table;
+        overflow: hidden;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    .st {
+        padding-right: 40px !important;
+    }
+    .checkout {
+        display: block !important;
+    }
+    .footer-heading ul {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    }
+
+    @media all and (max-width:480px){
+        .st {
+        padding-right: 18px !important;
+    }
+    .navbar li a {
+        font-size: 14px !important;
+    }
+
+    table, tr, td{display:block; overflow: hidden; width: 100% !important;}
+    .footer-heading h6 {
+        text-align: left !important;
+    }
+    .footer-heading ul {
+        justify-content: start;
+    }
+    .header-table {
+        display: flex!important;
+        display: -webkit-flex;
+        flex-wrap: wrap!important;
+        justify-content: center!important;
+    }
+    .navbar {
+        display: flex!important;
+        display: -webkit-flex;
+        flex-wrap: wrap!important;
+        justify-content: center!important;
+    }
+    .left {
+            display: flex!important;
+            display: -webkit-flex;
+        flex-wrap: wrap!important;
+        justify-content: center!important;
+    }
+    .product-item h6 {
+        padding-top: 20px !important;
+    }
+    }
+
+    </style>
+    </head>
+
+    <body>
+    <table bg color="#ebebec" width="100%"  border-collapse: collapse; class="main-table">
+        <tr>
+            <td>
+                <table class="inner-table" width="720px" style="background-image: url(bg.png); margin:0 auto; padding: 0 0px; background-repeat: no-repeat;
+                background-color: #fff; box-shadow: 0 0 5px 5px #88888829;">
+                    <tr>
+                        <td>
+                        <table style="background-color: #282828; padding:10px 0px;" width="100%"  border-collapse: collapse; class="header-table">
+                            <tr style="text-align: center";>
+                                <td>
+                                    <a class="logo" href="#">  
+                                    <img src="./images/logo.png" alt="logo">
+                                </a>
+                                </td>
+                            </tr>
+
+                </table>
+                <table style="width:100%; display:flex;  display: -webkit-flex; overflow:hidden; justify-content:center; background-color: #d12229; text-align: center;" width="100%"  border-collapse: collapse; class="banner">
+                        <tr class="gap30" height="30">
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h2 style="font-size: 28px;
+                                    color: #fff;
+                                    margin: 0px;
+                                    font-family: 'usual';
+                                    font-weight: 600;"> Gas Cylinder Rota Trolleys </h2>
+                                    <p style="font-size: 18px;
+                                    line-height: 28px;
+                                    color: #fff;
+                                    width: 100%;
+                                    max-width: 100%;
+                                    margin: 0 auto;
+                                    font-weight: 500;padding-bottom: 20px;">  
+                                        A Range of Superior Designed uogonomic Trolleys </p>
+                                        
+                                        <img src="./images/banner-img.png" alt="banner-img">
+                                </td>
+                            </tr> 
+                            <tr class="gap30" height="30">
+                                <td></td>
+                            </tr>
+                </table>
+
+
+                    <table style="width:100%; display:block; overflow:hidden; text-align:center; background-color: #f7f7f7; padding:50px 0px;" width="100%"  border-collapse: collapse; class="text-blog">
+                    <tr>
+                        <td>
+                            <p style="font-size: 14px;
+                            color: #282828;
+                            width: 100%;
+                            max-width: 86%;
+                            margin: 0 auto;
+                            line-height: 26px;">   There are many variations of passages of Lorem Ipsum available, but the majority have
+                                suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                                    All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary. </p>
+                        </td>
+                    </tr>
+                    </table>
+        
+                    <table style="width:100%; display:block; overflow:hidden; text-align:center; background-color: #fff; padding:50px 0px;" width="100%"  border-collapse: collapse; class="Benefit">
+                    <tr>
+                        <td>
+                            <h4 style="font-size: 23px; margin-top:0px;
+                            font-weight: 800;
+                            font-family: 'usual';
+                            letter-spacing: 2.1px;
+                            position: relative;padding-bottom:15px; "> KEY BENEFIT </h4>
+                            <img style="width: 100%;" src="./images/banefit-img.png" alt="benefit-img">
+                        </td>
+                    </tr>
+                    </table>
+
+                    <table style="width:100%; display:flex; display:-webkit-flex; justify-content: center; overflow:hidden; text-align:center; background-color: #f3f3f3; padding:20px 0px;" width="100%"  border-collapse: collapse; class="product">
+                    <tr>
+                        <td> 
+                        <h4 style="font-size: 23px; margin-top:0px;
+                        font-weight: 800;
+                        font-family: 'usual';
+                        letter-spacing: 2.1px;
+                        position: relative;padding-bottom:15px;"> EXPLORE THE RANGE </h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table style="width: 30%; float: left;"> 
+                                <tr>
+                                    <td> <div style="background: #fff;
+                                        box-shadow: 0 0 5px 5px #88888829;
+                                        padding: 10px;" class="shadow-blog">
+                                        <h6 style="font-size: 16px;
+                                        line-height: 0;
+                                        color: #282828;
+                                        font-weight: 800;
+                                        margin: 0;
+                                        padding-top: 10px;"> GTR13 </h6>
+                                        <p style="color: #999;
+                                        font-size: 16px;
+                                        font-weight: 500; box-shadow: 0 4px 0px 0px #f3f3f3;
+                                        display: block;
+                                        padding-bottom: 10px;">  Single Cylinder
+                                            Rota Trolley
+                                        </p>
+                                        <img style="box-shadow: 0 4px 0px 0px #f3f3f3;
+                                        display: block;
+                                        margin-bottom: 10px;" src="./images/product-img1.png" alt="product-img1">
+                                        <a style="color: #d71921;
+                                        border: 1px solid #d71921;
+                                            border-bottom-color: rgb(215, 25, 33);
+                                            border-bottom-style: solid;
+                                            border-bottom-width: 1px;
+                                        display: block;
+                                        text-decoration: none;
+                                        padding: 10px;
+                                        border-bottom: 2px solid;
+                                        font-size: 14.48px;
+                                        font-weight: 500;" class="view-product"
+                                         href="#"> View product </a>
+                                    </div> </td>
+                                </tr>
+                            </table>
+                            <table style="width: 30%; float: left;"> 
+                                <tr>
+                                    <td> <div style="background: #fff;
+                                        box-shadow: 0 0 5px 5px #88888829;
+                                        padding: 10px;" class="shadow-blog">
+                                        <h6 style="font-size: 16px;
+                                        line-height: 0;
+                                        color: #282828;
+                                        font-weight: 800;
+                                        margin: 0;
+                                        padding-top: 10px;"> GTR13 </h6>
+                                        <p style="color: #999;
+                                        font-size: 16px;
+                                        font-weight: 500; box-shadow: 0 4px 0px 0px #f3f3f3;
+                                        display: block;
+                                        padding-bottom: 10px;">  Single Cylinder
+                                            Rota Trolley
+                                        </p>
+                                        <img style="box-shadow: 0 4px 0px 0px #f3f3f3;
+                                        display: block;
+                                        margin-bottom: 10px;" src="./images/product-img1.png" alt="product-img1">
+                                        <a style="color: #d71921;
+                                        border: 1px solid #d71921;
+                                            border-bottom-color: rgb(215, 25, 33);
+                                            border-bottom-style: solid;
+                                            border-bottom-width: 1px;
+                                        display: block;
+                                        text-decoration: none;
+                                        padding: 10px;
+                                        border-bottom: 2px solid;
+                                        font-size: 14.48px;
+                                        font-weight: 500;" class="view-product"
+                                         href="#"> View product </a>
+                                    </div> </td>
+                                </tr>
+                            </table>
+                            <table style="width: 30%; float: left;"> 
+                                <tr>
+                                    <td> <div style="background: #fff;
+                                        box-shadow: 0 0 5px 5px #88888829;
+                                        padding: 10px;" class="shadow-blog">
+                                        <h6 style="font-size: 16px;
+                                        line-height: 0;
+                                        color: #282828;
+                                        font-weight: 800;
+                                        margin: 0;
+                                        padding-top: 10px;"> GTR13 </h6>
+                                        <p style="color: #999;
+                                        font-size: 16px;
+                                        font-weight: 500; box-shadow: 0 4px 0px 0px #f3f3f3;
+                                        display: block;
+                                        padding-bottom: 10px;">  Single Cylinder
+                                            Rota Trolley
+                                        </p>
+                                        <img style="box-shadow: 0 4px 0px 0px #f3f3f3;
+                                        display: block;
+                                        margin-bottom: 10px;" src="./images/product-img1.png" alt="product-img1">
+                                        <a style="color: #d71921;
+                                        border: 1px solid #d71921;
+                                            border-bottom-color: rgb(215, 25, 33);
+                                            border-bottom-style: solid;
+                                            border-bottom-width: 1px;
+                                        display: block;
+                                        text-decoration: none;
+                                        padding: 10px;
+                                        border-bottom: 2px solid;
+                                        font-size: 14.48px;
+                                        font-weight: 500;" class="view-product"
+                                         href="#"> View product </a>
+                                    </div> </td>
+                                </tr>
+                            </table>
+                            <table style="width: 30%; float: left;"> 
+                                <tr>
+                                    <td> <div style="background: #fff;
+                                        box-shadow: 0 0 5px 5px #88888829;
+                                        padding: 10px;" class="shadow-blog">
+                                        <h6 style="font-size: 16px;
+                                        line-height: 0;
+                                        color: #282828;
+                                        font-weight: 800;
+                                        margin: 0;
+                                        padding-top: 10px;"> GTR13 </h6>
+                                        <p style="color: #999;
+                                        font-size: 16px;
+                                        font-weight: 500; box-shadow: 0 4px 0px 0px #f3f3f3;
+                                        display: block;
+                                        padding-bottom: 10px;">  Single Cylinder
+                                            Rota Trolley
+                                        </p>
+                                        <img style="box-shadow: 0 4px 0px 0px #f3f3f3;
+                                        display: block;
+                                        margin-bottom: 10px;" src="./images/product-img1.png" alt="product-img1">
+                                        <a style="color: #d71921;
+                                        border: 1px solid #d71921;
+                                            border-bottom-color: rgb(215, 25, 33);
+                                            border-bottom-style: solid;
+                                            border-bottom-width: 1px;
+                                        display: block;
+                                        text-decoration: none;
+                                        padding: 10px;
+                                        border-bottom: 2px solid;
+                                        font-size: 14.48px;
+                                        font-weight: 500;" class="view-product"
+                                         href="#"> View product </a>
+                                    </div> </td>
+                                </tr>
+                            </table>
+                            <table style="width: 30%; float: left;"> 
+                                <tr>
+                                    <td> <div style="background: #fff;
+                                        box-shadow: 0 0 5px 5px #88888829;
+                                        padding: 10px;" class="shadow-blog">
+                                        <h6 style="font-size: 16px;
+                                        line-height: 0;
+                                        color: #282828;
+                                        font-weight: 800;
+                                        margin: 0;
+                                        padding-top: 10px;"> GTR13 </h6>
+                                        <p style="color: #999;
+                                        font-size: 16px;
+                                        font-weight: 500; box-shadow: 0 4px 0px 0px #f3f3f3;
+                                        display: block;
+                                        padding-bottom: 10px;">  Single Cylinder
+                                            Rota Trolley
+                                        </p>
+                                        <img style="box-shadow: 0 4px 0px 0px #f3f3f3;
+                                        display: block;
+                                        margin-bottom: 10px;" src="./images/product-img1.png" alt="product-img1">
+                                        <a style="color: #d71921;
+                                        border: 1px solid #d71921;
+                                            border-bottom-color: rgb(215, 25, 33);
+                                            border-bottom-style: solid;
+                                            border-bottom-width: 1px;
+                                        display: block;
+                                        text-decoration: none;
+                                        padding: 10px;
+                                        border-bottom: 2px solid;
+                                        font-size: 14.48px;
+                                        font-weight: 500;" class="view-product"
+                                         href="#"> View product </a>
+                                    </div> </td>
+                                </tr>
+                            </table>
+                            <table style="width: 30%; float: left;"> 
+                                <tr>
+                                    <td> <div style="background: #fff;
+                                        box-shadow: 0 0 5px 5px #88888829;
+                                        padding: 10px;" class="shadow-blog">
+                                        <h6 style="font-size: 16px;
+                                        line-height: 0;
+                                        color: #282828;
+                                        font-weight: 800;
+                                        margin: 0;
+                                        padding-top: 10px;"> GTR13 </h6>
+                                        <p style="color: #999;
+                                        font-size: 16px;
+                                        font-weight: 500; box-shadow: 0 4px 0px 0px #f3f3f3;
+                                        display: block;
+                                        padding-bottom: 10px;">  Single Cylinder
+                                            Rota Trolley
+                                        </p>
+                                        <img style="box-shadow: 0 4px 0px 0px #f3f3f3;
+                                        display: block;
+                                        margin-bottom: 10px;" src="./images/product-img1.png" alt="product-img1">
+                                        <a style="color: #d71921;
+                                        border: 1px solid #d71921;
+                                            border-bottom-color: rgb(215, 25, 33);
+                                            border-bottom-style: solid;
+                                            border-bottom-width: 1px;
+                                        display: block;
+                                        text-decoration: none;
+                                        padding: 10px;
+                                        border-bottom: 2px solid;
+                                        font-size: 14.48px;
+                                        font-weight: 500;" class="view-product"
+                                         href="#"> View product </a>
+                                    </div> </td>
+                                </tr>
+                            </table>
+                                
+                                
+                            
+                        </td>
+                    </tr>
+                    
+                    </table>
+
+
+                    
+                            
+                    <table style="width:100%; overflow:hidden; text-align:center; background-color: #fff; padding:50px 0px;" width="100%"  border-collapse: collapse; class="country">
+                       
+                       <tr> 
+                           <td>
+                            <table style="width: 25%; float: left; text-align: center;"> 
+                                <tr>
+                                    <td> 
+                                        <img src="./images/country-icon1.png" alt="country-img1"> 
+                                        <h6 style="font-size: 14px;
+                                        font-weight: 500;
+                                        margin: 0px;
+                                        padding: 5px 0px;"> Made in Australia </h6>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="width: 25%; float: left; text-align: center;"> 
+                                <tr>
+                                    <td> 
+                                        <img src="./images/truck.png" alt="truck"> 
+                                        <h6 style="font-size: 14px;
+                                        font-weight: 500;
+                                        margin: 0px;
+                                        padding: 5px 0px;"> Made in Australia </h6>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="width: 25%; float: left; text-align: center;"> 
+                                <tr>
+                                    <td> 
+                                        <img src="./images/setting.png" alt="setting"> 
+                                        <h6 style="font-size: 14px;
+                                        font-weight: 500;
+                                        margin: 0px;
+                                        padding: 5px 0px;"> Made in Australia </h6>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="width: 25%; float: left; text-align: center;"> 
+                                <tr>
+                                    <td> 
+                                        <img src="./images/compliants.png" alt="compliants"> 
+                                        <h6 style="font-size: 14px;
+                                        font-weight: 500;
+                                        margin: 0px;
+                                        padding: 5px 0px;"> Made in Australia </h6>
+                                    </td>
+                                </tr>
+                            </table>
+    
+                           </td>
+                       </tr>
+                    </table>
+
+                <table style="padding:0px 0px 30px; border-bottom:8px solid red; background-color:#282828; padding:20px;" width="100%; background-color:#333333; "  border-collapse: collapse; class="footer">  
+                <tr>
+                    <td>
+                        <table style="width:70%; float: left; padding-top: 35px;"  border-collapse: collapse; class="footer-heading"> 
+                            <tr> 
+                                <td> 
+                                     <a class="footer-logo" href="#"> <img src="./images/logo.png" alt="logo"> </a>
+                                
+                
+                            </td>
+                            </tr>
+                            
+                            </table> 
+                           
+
+                            <table style="width:30%; float: right;"  border-collapse: collapse; class="footer-heading">
+                            <tr> 
+                                <td> 
+                                
+                                    <h6 style="color: #fff;
+                                    font-size: 14.74px;
+                                    margin: 0;
+                                    text-transform: uppercase;
+                                    font-weight: 400;"> contact us today on:</h6>
+                                        <ul style="padding-left: 0px;" class="footer-text">
+                                            <li style="list-style: none; padding-bottom: 5px;"> <a style="color: #fff;
+                                            font-size: 14px;
+                                            font-weight: 500;
+                                            text-decoration: none;" href="#">     P : 1300 134 223  </a> </li>
+                                        
+                                
+                                            <li style="list-style:none; padding-bottom: 5px;"> <a style="color: #fff;
+                                            font-size: 14px;
+                                            font-weight: 500;
+                                            text-decoration: none;" href="#">           sales@storemasta.com.au</a> </li>
+                                            <li style="list-style:none; padding-bottom: 5px;"> <a style="color: #fff;
+                                            font-size: 14px;
+                                            font-weight: 500;
+                                            text-decoration: none;" href="#">           www.storemasta.com.au </a> </li>
+                                        </ul>
+                            </tr>
+                            
+                        </table>
+                    </td>
+                </tr>    
+            </table>
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                    </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+        
+    </body>
+    </html>
